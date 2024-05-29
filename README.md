@@ -10,6 +10,11 @@ Only using Python, this program is, essentially, a calculator.
 
 ## Version History 
 
+**Version 0.2**  
+*05/29/2024*  
+* Created a simple calculate() function with if/elif statements based on operators.
+* Added some spacing for aesthetics.
+
 **Version 0.1**  
 *05/27/2024*  
 * This program has just been started.
