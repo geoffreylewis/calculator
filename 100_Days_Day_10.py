@@ -2,32 +2,72 @@
 # Calculator #
 ##############
 
+# ASCII art for beginning banner/logo (courtesy of https://replit.com/@appbrewery/calculator-start#art.py).
+# Slight modification by author.
+banner_logo = """
+ _____________________
+|  _________________  |
+| | PythonCalc   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+"""
+
+# Intro to the calculator.
+print(banner_logo)
 print("It's time to use the calculator!\n")
 
-def calculate(first_num, optr, next_num):
-    if optr == "+":
-        return first_num + next_num
-    elif optr == "-":
-        return first_num - next_num
-    elif optr == "*":
-        return first_num * next_num
-    elif optr == "/":
-        return first_num / next_num
+# Defining the mathematical operations.
+def addition(num1, num2):
+    return num1 + num2
 
-first_number = int(input("What's the first number? \n"))
+def subtraction(num1, num2):
+    return num1 - num2
+
+def multiplication(num1, num2):
+    return num1 * num2
+
+def division(num1, num2):
+    return num1 / num2
+
+# Dictionary that holds the operational functions.
+operational_functions = {
+    "+": addition,
+    "-": subtraction,
+    "*": multiplication,
+    "/": division
+}
+
+# def calculate(first_num, optr, next_num):
+#     if optr == "+":
+#         return first_num + next_num
+#     elif optr == "-":
+#         return first_num - next_num
+#     elif optr == "*":
+#         return first_num * next_num
+#     elif optr == "/":
+#         return first_num / next_num
+
+number_1 = int(input("What's the first number? \n"))
 print()
-print("+")
-print("-")
-print("*")
-print("/")
+number_2 = int(input("What's the next number? \n"))
+print()
+
+for optr in operational_functions:
+    print(optr)
 print()
 operation = input("Pick an operation: \n")
 print()
-next_number = int(input("What's the next number? \n"))
-calculation = calculate(first_num = first_number, optr = operation, next_num = next_number)
-print(calculation) # TEST CODE
-# print("5 / 2 = 2.5")
-# input("Type \"y\" to continue calculating with 2.5, or type \"n\" to start a new calculation: \n")
+continue_calculating = str(input("Type \"y\" to continue calculating with 2.5, or type \"n\" to start a new calculation: \n").lower())
 
+# The end of calculations.
 print()
 print("Thanks for using the calculator!")
