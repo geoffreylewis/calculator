@@ -10,6 +10,12 @@ Only using Python, this program is, essentially, a calculator.
 
 ## Version History 
 
+**Version 0.4**  
+*06/04/2024*  
+* Re-organized input() questions for the user.
+* Stored initial calculations in some variables.
+* Created f-string to display user's initial choices and answer.
+
 **Version 0.3**  
 *05/31/2024*  
 * Reworked the mathematical functions (broke them down by operation).
