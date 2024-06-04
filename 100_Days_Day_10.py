@@ -46,26 +46,30 @@ operational_functions = {
     "/": division
 }
 
-# def calculate(first_num, optr, next_num):
-#     if optr == "+":
-#         return first_num + next_num
-#     elif optr == "-":
-#         return first_num - next_num
-#     elif optr == "*":
-#         return first_num * next_num
-#     elif optr == "/":
-#         return first_num / next_num
-
+# Pick your first number.
 number_1 = int(input("What's the first number? \n"))
 print()
-number_2 = int(input("What's the next number? \n"))
-print()
 
+# Display possible operations.
 for optr in operational_functions:
     print(optr)
 print()
+
+# Pick an operation.
 operation = input("Pick an operation: \n")
 print()
+
+# Pick your second number.
+number_2 = int(input("What's the next number? \n"))
+print()
+
+# Calculating the initial solution.
+initial_calculation = operational_functions[operation] # Use the dictionary above.
+initial_answer = initial_calculation(number_1, number_2) # Pass in your arguments/numbers.
+print("It looks like: ")
+print(f"{number_1} {operation} {number_2} = {initial_answer}") # Print the above choices and answer.
+print()
+
 continue_calculating = str(input("Type \"y\" to continue calculating with 2.5, or type \"n\" to start a new calculation: \n").lower())
 
 # The end of calculations.
