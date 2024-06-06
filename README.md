@@ -10,6 +10,10 @@ Only using Python, this program is, essentially, a calculator.
 
 ## Version History 
 
+**Version 0.5**  
+*06/05/2024*  
+* Added functionality for an additional calculation.
+
 **Version 0.4**  
 *06/04/2024*  
 * Re-organized input() questions for the user.
