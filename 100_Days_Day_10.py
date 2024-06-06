@@ -70,7 +70,21 @@ print("It looks like: ")
 print(f"{number_1} {operation} {number_2} = {initial_answer}") # Print the above choices and answer.
 print()
 
-continue_calculating = str(input("Type \"y\" to continue calculating with 2.5, or type \"n\" to start a new calculation: \n").lower())
+# Calculating further solutions.
+continue_calculating = str(input("Type \"y\" to continue calculating, or type \"n\" to stop using the calculator: \n").lower())
+if continue_calculating == "y":
+    next_operation = input("Pick the next operation: \n")
+    print()
+    next_number = int(input("What's the next number? \n"))
+    print()
+    next_calculation = operational_functions[operation]
+    next_answer = next_calculation(initial_answer, next_number)
+    print("It looks like: ")
+    print(f"{initial_answer} {next_operation} {next_number} = {next_answer}")
+    print()
+elif continue_calculating != "y" and continue_calculating != "n":
+    print("You don't follow instructions well, do you?")
+    exit()
 
 # The end of calculations.
 print()
