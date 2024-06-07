@@ -10,6 +10,13 @@ Only using Python, this program is, essentially, a calculator.
 
 ## Version History 
 
+**Version 0.6**  
+*06/06/2024*  
+* Encompassed all calculations within one overall function.
+* Created a "while" loop that will repeat as many calculations as desired.
+* Removed some unnecessary code.
+* Added another option to start a brand new calculation (without having to start over the program completely).
+
 **Version 0.5**  
 *06/05/2024*  
 * Added functionality for an additional calculation.
