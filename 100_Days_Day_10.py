@@ -46,46 +46,52 @@ operational_functions = {
     "/": division
 }
 
-# Pick your first number.
-number_1 = int(input("What's the first number? \n"))
-print()
+# Function that encompasses all of the calculations.
+def use_the_calculator():
 
-# Display possible operations.
-for optr in operational_functions:
-    print(optr)
-print()
-
-# Pick an operation.
-operation = input("Pick an operation: \n")
-print()
-
-# Pick your second number.
-number_2 = int(input("What's the next number? \n"))
-print()
-
-# Calculating the initial solution.
-initial_calculation = operational_functions[operation] # Use the dictionary above.
-initial_answer = initial_calculation(number_1, number_2) # Pass in your arguments/numbers.
-print("It looks like: ")
-print(f"{number_1} {operation} {number_2} = {initial_answer}") # Print the above choices and answer.
-print()
-
-# Calculating further solutions.
-continue_calculating = str(input("Type \"y\" to continue calculating, or type \"n\" to stop using the calculator: \n").lower())
-if continue_calculating == "y":
-    next_operation = input("Pick the next operation: \n")
+    # Pick your first number.
+    number_1 = int(input("What's the first number? \n"))
     print()
-    next_number = int(input("What's the next number? \n"))
-    print()
-    next_calculation = operational_functions[operation]
-    next_answer = next_calculation(initial_answer, next_number)
-    print("It looks like: ")
-    print(f"{initial_answer} {next_operation} {next_number} = {next_answer}")
-    print()
-elif continue_calculating != "y" and continue_calculating != "n":
-    print("You don't follow instructions well, do you?")
-    exit()
 
-# The end of calculations.
+    # Display possible operations.
+    for optr in operational_functions:
+        print(optr)
+    print()
+
+    # Creating "while" loop for further calculations.
+    still_calculating = True
+    while still_calculating == True:
+        # Pick an operation.
+        operation = input("Pick an operation: \n")
+        print()
+
+        # Pick your second (or next) number.
+        number_2 = int(input("What's the next number? \n"))
+        print()
+
+        # Calculating the initial (or next) solution.
+        initial_calculation = operational_functions[operation] # Use the dictionary above.
+        initial_answer = initial_calculation(number_1, number_2) # Pass in your arguments/numbers.
+        print("It looks like: ")
+        print(f"{number_1} {operation} {number_2} = {initial_answer}") # Print the above choices and answer.
+        print()
+
+        # Other scenarios for the user.
+        continue_calculating = str(input("Type \"y\" to continue calculating, type \"n\" to start a brand new calculation, or type \"done\" to stop using the calculator: \n").lower())
+        if continue_calculating == "y":
+            number_1 = initial_answer
+        elif continue_calculating == "n":
+            # Calling the function recursively in order to start all over.
+            use_the_calculator()
+        elif continue_calculating == "done":
+            still_calculating = False
+        else:
+            print("You don't follow instructions well, do you?")
+            exit()
+
+# Calling the overall function to kick off everything else.
+use_the_calculator()
+
+# The end of all calculations.
 print()
 print("Thanks for using the calculator!")
