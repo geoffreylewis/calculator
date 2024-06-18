@@ -10,6 +10,13 @@ Only using Python, this program is, essentially, a calculator.
 
 ## Version History 
 
+**Version 1.0**  
+*06/17/2024*  
+* Program is functional.
+* Changed int() to float() so as to avoid mathematical bugs.
+* Added another "False" value to the "still_calculating" variable in order to prevent a loop bug.
+* Moved around the ending sentence to the program.
+
 **Version 0.6**  
 *06/06/2024*  
 * Encompassed all calculations within one overall function.
