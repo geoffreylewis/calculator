@@ -50,7 +50,7 @@ operational_functions = {
 def use_the_calculator():
 
     # Pick your first number.
-    number_1 = int(input("What's the first number? \n"))
+    number_1 = float(input("What's the first number? \n"))
     print()
 
     # Display possible operations.
@@ -66,7 +66,7 @@ def use_the_calculator():
         print()
 
         # Pick your second (or next) number.
-        number_2 = int(input("What's the next number? \n"))
+        number_2 = float(input("What's the next number? \n"))
         print()
 
         # Calculating the initial (or next) solution.
@@ -81,17 +81,17 @@ def use_the_calculator():
         if continue_calculating == "y":
             number_1 = initial_answer
         elif continue_calculating == "n":
+            still_calculating = False
             # Calling the function recursively in order to start all over.
             use_the_calculator()
         elif continue_calculating == "done":
             still_calculating = False
+            print()
+            print("Thanks for mathing with the calculator!")
         else:
+            print()
             print("You don't follow instructions well, do you?")
             exit()
 
 # Calling the overall function to kick off everything else.
 use_the_calculator()
-
-# The end of all calculations.
-print()
-print("Thanks for using the calculator!")
